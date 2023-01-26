@@ -14,7 +14,7 @@ with open('namesFile.txt', 'r') as f:
     if lines:
         last_line = lines[-1]
         nameString = last_line[:4]
-        
+
 if nameString != "":
     offset1 = ord(nameString[0]) + 1 - 97
     offset2 = ord(nameString[1]) - 97
@@ -26,10 +26,10 @@ for four in range(97 + offset4, 123):
     for three in range(97 + offset3, 123):
         offset3 = 0
         for two in range(97 + offset2, 123):
-	    offset2 = 0
+            offset2 = 0
             for one in range(97 + offset1, 123):
-		offset1 = 0
-                name = chr(one)+chr(two)+chr(three)+chr(four)
+                offset1 = 0
+                name = chr(one) + chr(two) + chr(three) + chr(four)
                 url = ''.join([base_url, name])
                 x = requests.get(url)
                 time.sleep(1)
